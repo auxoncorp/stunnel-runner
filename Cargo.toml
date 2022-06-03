@@ -1,0 +1,18 @@
+[package]
+name = "stunnel-runner"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tempfile = "3"
+thiserror = "1"
+tracing = "0.1"
+tokio = { version = "1", features = ["full"] }  # TODO less features
+regex = "1"
+prctl = "1"
+
+[dev-dependencies]
+tokio-stream = { version = "0.1", features = ["net"] }
+warp = "0.3"
+tracing-subscriber = "0.2"
+reqwest = "0.11"
