@@ -9,7 +9,6 @@ thiserror = "1"
 tracing = "0.1"
 tokio = { version = "1", features = ["net", "io-util", "process", "sync", "rt"] }
 regex = "1"
-prctl = "1"
 
 [dev-dependencies]
 tokio-stream = { version = "0.1", features = ["net"] }
