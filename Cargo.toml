@@ -11,7 +11,8 @@ tokio = { version = "1", features = ["net", "io-util", "process", "sync", "rt"] 
 regex = "1"
 
 [dev-dependencies]
-tokio-stream = { version = "0.1", features = ["net"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+tokio-stream = { version = "0.1", features = ["net", "signal"] }
 warp = "0.3"
 tracing-subscriber = "0.2"
 reqwest = "0.11"
