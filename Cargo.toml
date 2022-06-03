@@ -7,7 +7,7 @@ edition = "2021"
 tempfile = "3"
 thiserror = "1"
 tracing = "0.1"
-tokio = { version = "1", features = ["full"] }  # TODO less features
+tokio = { version = "1", features = ["net", "io-util", "process", "sync", "rt"] }
 regex = "1"
 prctl = "1"
 
