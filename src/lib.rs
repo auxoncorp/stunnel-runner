@@ -17,7 +17,7 @@ use tokio::{
     process::{Child, ChildStderr, Command},
     sync::RwLock,
 };
-use tracing::{error, info, trace};
+use tracing::{error, info};
 
 /// An RAII holder for the started stunnel process. When this is
 /// dropped, we send SIGKILL to stunnel.
@@ -182,11 +182,11 @@ impl STunnel {
 
 impl Drop for STunnel {
     fn drop(&mut self) {
-        trace!("Sending SIGKILL to stunnel");
+        info!("Sending SIGKILL to stunnel");
         let _ = self.child.start_kill();
 
         for f in self.temp_files.drain(0..) {
-            trace!("Cleaning up temporary file {}", f.display());
+            info!("Cleaning up temporary file {}", f.display());
             drop(f);
         }
     }
